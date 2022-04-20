@@ -9,6 +9,12 @@ import { AuthComponent } from './authcomponents/auth.component';
 import { LoginpageComponent } from './authcomponents/loginpage/loginpage.component';
 import { SignuppageComponent } from './authcomponents/signuppage/signuppage.component';
 import { ResetpageComponent } from './authcomponents/resetpage/resetpage.component';
+import { DashboardComponent } from './dashboardcomponents/dashboard/dashboard.component';
+import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
+import { ApiService } from './services/api.service';
+import { DatabinderService } from './services/databinder.service';
+import { MethodsService } from './services/methods.service';
+import { TestapiService } from './services/testapi.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,9 @@ import { ResetpageComponent } from './authcomponents/resetpage/resetpage.compone
     AuthComponent,
     LoginpageComponent,
     SignuppageComponent,
-    ResetpageComponent
+    ResetpageComponent,
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,12 @@ import { ResetpageComponent } from './authcomponents/resetpage/resetpage.compone
     BrowserAnimationsModule,
     FormsModule,ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    DatabinderService,
+    MethodsService,
+    TestapiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
