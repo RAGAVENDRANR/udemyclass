@@ -5,7 +5,7 @@ import { LoginpageComponent } from './authcomponents/loginpage/loginpage.compone
 import { ResetpageComponent } from './authcomponents/resetpage/resetpage.component';
 import { SignuppageComponent } from './authcomponents/signuppage/signuppage.component';
 import { DashboardComponent } from './dashboardcomponents/dashboard/dashboard.component';
-import { NavbarComponent } from './dashboardcomponents/dashboard/navbar/navbar.component';
+import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
 import { HomepageComponent } from './dashboardcomponents/homepage/homepage.component';
 
 
@@ -19,7 +19,7 @@ const routes: Routes = [
     {path:'**',redirectTo:'loginpage',pathMatch:'full'},
   ]},
   {path:'dashboard',component:DashboardComponent,children:[
-    {path:' ',redirectTo:'homepage',pathMatch:'full'},
+    {path:'',redirectTo:'homepage',pathMatch:'full'},
     {path:'homepage',component:HomepageComponent},
     {path:'navbar',component:NavbarComponent},
   ]},

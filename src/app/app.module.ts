@@ -15,7 +15,7 @@ import { ApiService } from './services/api.service';
 import { DatabinderService } from './services/databinder.service';
 import { MethodsService } from './services/methods.service';
 import { TestapiService } from './services/testapi.service';
-import { NavbarComponent } from './dashboardcomponents/dashboard/navbar/navbar.component';
+import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
 import { HomepageComponent } from './dashboardcomponents/homepage/homepage.component';
 
 @NgModule({
