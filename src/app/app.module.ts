@@ -10,11 +10,13 @@ import { LoginpageComponent } from './authcomponents/loginpage/loginpage.compone
 import { SignuppageComponent } from './authcomponents/signuppage/signuppage.component';
 import { ResetpageComponent } from './authcomponents/resetpage/resetpage.component';
 import { DashboardComponent } from './dashboardcomponents/dashboard/dashboard.component';
-import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
+
 import { ApiService } from './services/api.service';
 import { DatabinderService } from './services/databinder.service';
 import { MethodsService } from './services/methods.service';
 import { TestapiService } from './services/testapi.service';
+import { NavbarComponent } from './dashboardcomponents/dashboard/navbar/navbar.component';
+import { HomepageComponent } from './dashboardcomponents/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { TestapiService } from './services/testapi.service';
     SignuppageComponent,
     ResetpageComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
