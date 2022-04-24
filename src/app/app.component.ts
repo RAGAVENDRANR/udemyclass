@@ -13,4 +13,10 @@ export class AppComponent implements OnInit{
   @HostListener('contextmenu', ['$event'])
   onRightClick(event:any) {
   event.preventDefault();} 
+
+  childdata:any
+  getdata(data: any){
+    this.childdata=data
+console.log("Data received from the auth component", data)
+  }
 }

@@ -1,6 +1,7 @@
 <!--This was used to prevent the entery of the spacebar = (keydown.space)="$event.preventDefault()-->
 <div  (keydown.space)="$event.preventDefault()"  >
-    <app-auth [childdata]="parentdata"></app-auth>
+    <app-auth [childdata]="parentdata" (outputdata)="getdata($event)"></app-auth>
+    {{childdata}}
 <router-outlet></router-outlet>  
 </div>
 
