@@ -17,8 +17,11 @@ import { MethodsService } from './services/methods.service';
 import { TestapiService } from './services/testapi.service';
 
 import { HomepageComponent } from './dashboardcomponents/homepage/homepage.component';
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +30,15 @@ import { HomepageComponent } from './dashboardcomponents/homepage/homepage.compo
     SignuppageComponent,
     ResetpageComponent,
     DashboardComponent,
-    HomepageComponent
+    HomepageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    MatFormFieldModule,MatIconModule,MatToolbarModule,MatCardModule
   ],
   providers: [
     ApiService,

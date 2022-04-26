@@ -1,17 +1,18 @@
 <p>homepage works!</p>
-<div class="col">
-    <h1>Hello!!!</h1>
-    <input [(ngModel)]="name" >
+<!-- <div class="col">
+    <h1>Hello!!! twoway - databinidng</h1>
+    <input [(ngModel)]="name" >{{name}} -->
     <!--string interpolation-->
-    <p>{{name}}</p>
-    <p>{{value}}</p>
+  <!-- <hr> -->
+    <!-- <p>{{value}}</p> -->
     <!--Event binding-->
-    <button [disabled]="!value" class="btn btn-success" (click)="alerter()">Select</button>
-    <input (input)="addvalue($event)" (keypress)="enjoy()">
-        {{namesvalue}}
-    </div>
+    <!-- <button [disabled]="!value" class="btn btn-success" (click)="alerter()">Select</button><hr>
+    <h3>Databinding without the ngmodel</h3>
+    <input (input)="addvalue($event)" (keypress)="enjoy()" >
+       <p>Output :{{namesvalue}} </p> 
+    </div> -->
     <!--Child task-->
-    <div style="text-align:center">
+    <!-- <div style="text-align:center">
         <h1>{{name}}</h1>
       </div>
       <div class="container">
@@ -30,5 +31,18 @@
                 </li>
               </ul>
             </div>
-        </div>
-        
+        </div> -->
+        <h2>Assignment 2 : Databinding</h2>
+<div class="container">
+  <input [(ngModel)]="username"  (input)="pressevent($event)" style="width:20rem;height:2rem">
+  <p>Output : {{username}}</p>
+  <p><button [disabled]="lengthcount" (click)="save()">SAVE</button></p>
+</div>
+<div>
+  <input [(ngModel)]="clientname" >
+<p *ngIf="clientname.length>0">Started typing</p>
+  <!-- <button (click)="show()">show</button> -->
+</div>
+<button (click)="routetohome()">Home page</button>
+<p *ngIf="ISSUE">Hello world thi sis the sdivnodskl</p>
+<button (click)="showcontent()">SHow</button>

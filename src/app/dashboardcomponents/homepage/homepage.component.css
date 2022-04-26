@@ -1,0 +1,24 @@
+input {
+    height: 50px;
+    width: 320px;
+    outline: none;
+    border: 2px solid rgb(198, 115, 115);
+    border-radius: 6px;
+    padding: 0px 10px;
+    font-size: 13px
+  }
+  input.is-invalid {
+    border: 2px solid red;
+    animation: shake 100ms
+  }
+  @keyframes shake {
+    25% {
+        transform: translateX(4px)
+    }
+    50% {
+        transform: translateX(-4px)
+    }
+    75% {
+        transform: translateX(4px)
+    }
+  }

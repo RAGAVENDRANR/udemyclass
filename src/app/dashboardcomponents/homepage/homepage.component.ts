@@ -1,4 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { MethodsService } from 'src/app/services/methods.service';
 
 @Component({
   selector: 'app-homepage',
@@ -10,7 +11,10 @@ export class HomepageComponent implements OnInit {
   masterSelected:boolean;
   checklist:any;
   checkedList:any;
-  constructor(){setTimeout(()=>{this.value=true,this.alerter() },2000),
+  constructor(
+    public m:MethodsService
+
+  ){setTimeout(()=>{this.value=true,this.alerter() },2000),
   this.masterSelected = false;
       this.checklist = [
         {id:1,value:'User01',isSelected:false},
@@ -70,5 +74,36 @@ this.namesvalue=(<HTMLInputElement>event.target).value
   }
   enjoy(){
     console.log("enter ",this.namesvalue)
+  }
+
+  //Assignment 2  : 
+  username:any
+  lengthcount=true
+  pressevent(event:Event){
+    // this.username=(<HTMLInputElement>event.target).value
+    console.log("Input was optained",this.username.length)
+    if(this.username.length != 0){
+       this.lengthcount=false
+    }
+    else {
+       this.lengthcount =true
+    }
+  }
+  save(){
+    console.log("Hello the value of the input field" , this.username)
+    this.username = null
+    this.lengthcount=true
+  }
+  clientname='';
+  // cliententry=false
+  // show(){
+  //   this.cliententry=!this.cliententry
+  // }
+  routetohome(){
+    this.m.routetohome()
+  }
+  ISSUE=true
+  showcontent(){
+    this.ISSUE=!this.ISSUE
   }
 }
