@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -10,20 +10,20 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class LoginpageComponent implements OnInit {
   loginForm = this.fb.group({
-    username: [null],
-    password: [null]
+    username: [null,[Validators.required,Validators.email]],
+    password: [null,[Validators.required,Validators.minLength(6),Validators.maxLength(16)]]
   });
+  data!:any
   constructor(public r:Router, public fb:FormBuilder, public api:ApiService) { }
-  // @Input() data!: any;
   ngOnInit(): void {
-    // console.log(this.data)
+    console.log("Auth Component Initilized")
     this.api.datacheck()
   }
   dashboardopen(){
     console.log("button clicked")
     
   }
-  onSubmit(){
+  save(){
     alert("Login Successs")
     let data = this.loginForm.value
     this.api.getusername = data.username
