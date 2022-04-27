@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MethodsService } from 'src/app/services/methods.service';
 
 @Component({
   selector: 'app-signuppage',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignuppageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private m:MethodsService) { }
 
   ngOnInit(): void {
   }
-
+  routetohome(){
+    this.m.routetohome()
+  }
 }

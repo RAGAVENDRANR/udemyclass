@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,8 @@ import { NavbarComponent } from './dashboardcomponents/navbar/navbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,ReactiveFormsModule,
+    HttpClientModule,
+    //material imports
     MatFormFieldModule,MatIconModule,MatToolbarModule,MatCardModule
   ],
   providers: [

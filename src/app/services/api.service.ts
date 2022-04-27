@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class ApiService implements OnInit{
   getusername=''
   getpassword=''
   iscorrect=false
-  constructor() { }
+  constructor(public http:HttpClient) { }
   ngOnInit(){
     this.datacheck()
     }
@@ -25,5 +26,26 @@ export class ApiService implements OnInit{
       return this.iscorrect =false
     }
   }
-  
+  //curdoperation
+  private baseUrl="http://localhost:3000/userdata"
+  getalldata(){
+    return this.http.get(this.baseUrl)
+    // .subscribe((res:any)=>{console.log("Console log from the get method on api service",res)})
+  }
+  createdata(adduser:any){
+    return this.http.post(this.baseUrl,adduser)
+    // .subscribe((res:any)=>{console.log("Console log of post method",res)})
+  }
+  getuserbyid(id:any){
+    return this.http.get(`${this.baseUrl}/${id}`)
+    // .subscribe((res:any)=>{console.log("cosole log get by id",res),id})
+  }
+  updateuser(id:any,updateddata:any){
+    return this.http.put(`${this.baseUrl}/${id}`, updateddata)
+    // .subscribe((res:any)=>{console.log("Console log update method", res + updateddata)})
+  }
+  deleteuser(id:any){
+    return this.http.delete(`${this.baseUrl}/${id}`)
+    // .subscribe((res:any)=>{console.log("Console log delete method", res + id)})
+  }
 }
